@@ -10,6 +10,10 @@ const PORT = process.env.PORT || 3000;
 const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',').map(origin => origin.trim()).filter(Boolean)
   || ['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000', 'http://127.0.0.1:3001', 'http://localhost:8081', 'http://127.0.0.1:8081'];
 
+// L'API tourne derriere Nginx en production, il faut donc faire confiance
+// au proxy pour que rate-limit et req.ip utilisent X-Forwarded-For.
+app.set('trust proxy', 1);
+
 // ── Connexion MongoDB ─────────────────────────────────────────────────────
 connectDB();
 
