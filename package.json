@@ -1,0 +1,27 @@
+{
+  "name": "wash-tracker-api",
+  "version": "1.0.0",
+  "description": "API REST WASH Tracker — Burkina Faso",
+  "main": "server.js",
+  "scripts": {
+    "start":   "node server.js",
+    "dev":     "nodemon server.js",
+    "seed":    "node seed.js",
+    "test":    "jest --coverage"
+  },
+  "dependencies": {
+    "bcrypt":            "^5.1.1",
+    "cors":              "^2.8.5",
+    "dotenv":            "^16.3.1",
+    "express":           "^4.18.2",
+    "express-rate-limit":"^7.1.5",
+    "helmet":            "^7.1.0",
+    "jsonwebtoken":      "^9.0.2",
+    "mongoose":          "^8.2.0"
+  },
+  "devDependencies": {
+    "jest":    "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest":"^6.3.4"
+  }
+}
